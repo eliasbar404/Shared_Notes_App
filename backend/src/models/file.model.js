@@ -12,6 +12,12 @@ const fileSchema = new mongoose.Schema(
 			required: true,
 			unique: true,
 		},
+        fileName: {
+            type: String,
+            required:true,
+            unique:true
+        }
+        ,
 		description: {
 			type: String,
 			required: true,
