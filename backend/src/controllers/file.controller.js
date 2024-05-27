@@ -1,15 +1,23 @@
-// import mongoose from "mongoose";
-// import multer   from "multer";
+import mongoose from "mongoose";
 import File from "../models/file.model.js";
 
 
+
+
+
+
 export const UploadFiles = async(req,res) => {
-    console.log(req.file);
-    const title = req.body.title;
+    
+
+    // res.send(`File Uploaded: ${req.file.filename}`);
+
+    const userId = req.body.userId;
+    const fileId = req.body.title;
     const fileName = req.file.filename;
     const description = req.body.description
+
     try {
-        await File.create({ title: title, fileName: fileName ,description:description});
+        await File.create({ title: title, fileName: fileName ,description:description,userId:userId});
         res.send({ status: "ok" });
     } catch (error) {
         res.json({ status: error });

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const savedSchema = new mongoose.Schema(
+const saveSchema = new mongoose.Schema(
 	{
 		userId: {
 			type: mongoose.Schema.Types.ObjectId,
@@ -10,7 +10,7 @@ const savedSchema = new mongoose.Schema(
 		fileId: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "File",
-			required: true,
+			required: true, 
 		},
 		
 		// createdAt, updatedAt => Member since <createdAt>
@@ -18,6 +18,6 @@ const savedSchema = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-const Saved = mongoose.model("Saved", savedSchema);
+const Save = mongoose.model("Save", saveSchema);
 
-export default Saved;
+export default Save;
